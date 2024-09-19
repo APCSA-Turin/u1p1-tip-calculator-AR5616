@@ -18,21 +18,21 @@ public class TipCalculator {
         result.append("Total percentage: " + percent + "%" + "\n");
 
         tip = (double)(percent)/100 * cost;
-        tip = (Math.round(tip * 100.0)/100.0); // https://www.educative.io/answers/how-to-use-the-java-mathround-method
-        result.append("Total tip: $" + tip + "\n");
-
         totalBill = cost + tip;
-        result.append("Total Bill with tip: $" + totalBill + "\n");
-
         costPerPerson = cost/people;
-        costPerPerson = (Math.round(costPerPerson * 100.0)/100.0);
-        result.append("Per person cost before tip: $" + costPerPerson + "\n");
-
         tipPerPerson = tip/people;
-        tipPerPerson = (Math.round(tipPerPerson * 100.0)/100.0);
-        result.append("Tip per person: $" + tipPerPerson + "\n");
-        
         totalCostPerPerson = costPerPerson + tipPerPerson;
+
+        tip = (Math.round(tip * 100.0)/100.0); // https://www.educative.io/answers/how-to-use-the-java-mathround-method
+        totalBill = (Math.round(totalBill * 100.0)/100.0);
+        costPerPerson = (Math.round(costPerPerson * 100.0)/100.0);
+        tipPerPerson = (Math.round(tipPerPerson * 100.0)/100.0);
+        totalCostPerPerson = (Math.round(totalCostPerPerson * 100.0)/100.0);
+
+        result.append("Total tip: $" + tip + "\n");
+        result.append("Total Bill with tip: $" + totalBill + "\n");
+        result.append("Per person cost before tip: $" + costPerPerson + "\n");
+        result.append("Tip per person: $" + tipPerPerson + "\n");
         result.append("Total cost per person: $" + totalCostPerPerson + "\n");
         result.append("-------------------------------\n");
 
@@ -41,9 +41,9 @@ public class TipCalculator {
      //TEST YOUR PROGRAM IN main
      public static void main(String[] args) {
         //try different values for people, percent, and cost to test your program before running test cases
-        int people = 6;
-        int percent = 25;
-        double cost = 52.27;        
+        int people = 12;
+        int percent = 15;
+        double cost = 566.97;        
         System.out.println(calculateTip(people,percent,cost));
     }
 }
